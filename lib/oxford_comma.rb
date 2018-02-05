@@ -3,15 +3,16 @@ def oxford_comma(array)
     return array[0]
   elsif array.length == 2
     array.join(" and ")
-  else 
-    a_s = ""
-    until array[array.length - 2]
-      a_s << array.join(", ")
-    end 
-    while array{array.length - 1}
-      a_s << array.join(", and ")
-    end
+  else
+    def oxford_comma(array)
+  if array.length == 1
+    return array[0]
+  elsif array.length == 2
+    array.join(" and ")
+  else
+    a_s = "#{array[0..array.length - 3].join(", ")}, #{array[array.length - 2..array.length - 1].join(", and ")}"
+    # a_s <<
+    # a_s <<
     a_s
   end
-
 end
